@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ezSearch GUI</title>
+    <style type="text/css" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"></style>
+    <style type="text/css">
+    	@font-face {
+		  font-family: juice;
+		  src: url('/juice.ttf');
+		}
+    	body {
+    		background-color: #171A21;
+    		color: #AFB3F7;
+    		font-family: 'juice';
+    		text-align: center
+    	}
+
+    	#titleContainer {
+			margin-top: 5%;
+			font-size: 35px;
+			text-decoration: underline;
+    	}
+
+    	#menuContainer {
+			/*background-color: black;*/
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+			width: 80%;
+			margin-right: auto;
+			margin-left: auto;
+    	}
+    	#tabContainer span {
+    		font-size: 24px;
+    		/*background-color: black;*/
+    		padding-top: 10px;
+    		padding-bottom: 10px;
+    		padding-left: 30px;
+    		padding-right: 30px;
+    		border: 1px solid black;
+    		transition: 0.6s;
+    	}
+    	#tabContainer span:hover{
+    		color: #171A21;
+    		background-color: #AFB3F7;
+    		cursor: pointer;
+    	}
+
+		hr {
+			border: 2px solid #92BCEA;
+			width: 97%;
+			margin-top: 100px;
+			margin-bottom: 100px;
+			opacity: 0.3;
+		}
+
+		#searchBtn {
+			background-color: transparent;
+			border:1px solid black;
+			display:inline-block;
+			cursor:pointer;
+			font-size: 24px;
+    		/*background-color: black;*/
+    		padding-top: 7px;
+    		padding-bottom: 7px;
+    		padding-left: 20px;
+    		padding-right: 20px;
+    		transition: 0.6s;
+    		color: #AFB3F7;
+		}
+		#searchBtn:hover {
+			color: #171A21;
+    		background-color: #AFB3F7;
+    		cursor: pointer;
+		}
+		#searchBtn:active {
+			position:relative;
+			top:1px;
+		}
+
+		#productName {
+			height: 28px;
+			width: 20%;
+		}
+
+		.historyItem {
+			width:100%;
+			border: 1px solid black;
+			padding-top:10px;
+			padding-bottom: 10px;
+			transition: 0.6s;
+		}
+		.historyItem:hover {
+			color: #171A21;
+    		background-color: #AFB3F7;
+    		cursor: pointer;
+		}
+
+    </style>
+  </head>
+</head>
+<body>
+	<div id="titleContainer">
+		<h1 id="title">ezSearch GUI</h1>
+	</div>
+	<br><br>
+	<div id="menuContainer">
+		<div id="tabContainer">
+			<span onclick="changeContent('search')">Search</span>
+		</div>
+		<div id="tabContainer">
+			<span onclick="changeContent('history')">History</span>
+		</div>
+		<div id="tabContainer">
+			<span onclick="changeContent('config')">Config</span>
+		</div>
+		<div id="tabContainer">
+			<span onclick="changeContent('help')">Help</span>
+		</div>
+	</div>
+	<hr>
+	<div id="mainContentContainer">
+		<div id="searchContentContainer" class="contentContainer">
+			<h1>Search a product across several platforms in one click!</h1>
+			<br><br>
+			<input type="text" name="productName" id="productName" placeholder="Product Name"><br><br><br>
+			<button id="searchBtn" onclick="searchProduct()">Search</button>
+		</div>
+		<div id="historyContentContainer" class="contentContainer">
+			<h1>To re-search a product, simply click on it from the history menu below.</h1><br><br>
+		</div>
+		<div id="configContentContainer" class="contentContainer">
+			<h1>Config</h1>
+			<h4 style="opacity: 0.5">If you wish to edit the config file, you must do so from the CLI.</h4>
+			<div id="configContent">
+				
+			</div>
+		</div>
+		<div id="helpContentContainer" class="contentContainer">
+			<h1>If you need help using this software or have found an issue / bug, you can visit the <a href="#">GitHub</a> for more references and examples or issue a report.</h1>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+<script type="text/javascript">
+	const changeContent = (name) => {
+		//Hide all containers
+		document.querySelectorAll('.contentContainer').forEach(item => {
+			item.style.display = 'none';
+		})
+		//Expose selected content container
+		document.querySelector(`#${name}ContentContainer`).style.display = 'inline';
+	}
+
+	const searchProduct = (d) => {
+		let data;
+		if(d == undefined){
+			data = `SEARCH : ${document.querySelector('#productName').value}`;
+		}else{
+			data = `SEARCH : ${d}`;
+		}
+		axios.post('/search', {data : data})
+	}
+
+	const populateHistoryContainer = () => {
+		axios.get('/history')
+		.then(res => {
+			//Create elm to store history data
+			const parent = document.querySelector('#historyContentContainer');
+
+			res.data.split(' : ').forEach(item => {
+				let elm = document.createElement('div');
+				elm.className = 'historyItem';
+				elm.innerHTML = item;
+				elm.addEventListener('click', (e) => {
+					searchProduct(e.target.innerText)
+				})
+				parent.appendChild(elm);
+			})
+		})
+		.catch(err => alert('ERROR : ' + err))
+	}
+	
+	const populateConfigContainer = () => {
+		axios.get('/config')
+		.then(res => {
+			document.querySelector('#configContent').innerHTML = JSON.stringify(res.data);
+		})
+		.catch(err => alert('ERROR : ' + err))
+	}
+
+	changeContent('search');
+	populateHistoryContainer();
+	populateConfigContainer();
+</script>
+</html>
