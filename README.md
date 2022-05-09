@@ -41,6 +41,13 @@ Because the GUI is rather self explanitory to navigate, the use section will onl
 **"exit"** - Exits program.
 
 
+# Features
+- Search up to 10 seperate e-commerce platforms with one click
+- Automatic VeRo checker, will check the given product name and cross reference the eBay VeRo list. If matched, it will warn you that it is a registered VeRo product
+- Customize which platforms you want to search on (Google, Ebay, Amazon are set by default)
+- History which keeps trach of your searches and can reseach old searches
+- CLI, a command line interface to interacting with program
+- GUI, a clean graphical user interface via your web browser at "localhost:3000"
 
 # TODO
 
