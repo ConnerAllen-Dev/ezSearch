@@ -6,7 +6,7 @@ Author: Conner Allen <br>
 Last Published: 5/8/2022 <br>
 
 # Requirements
-The only requirement for this program is <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>
+The only requirement for this program is <a href="https://nodejs.org/en/">NodeJS</a>
 
 # Installation 
 Installation can be done by cloning or downloading this repository
