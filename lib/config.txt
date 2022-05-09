@@ -1,0 +1,12 @@
+{"websites":{"google":"true","amazon":"true","ebay":"true","etsy":"false","mercari":"false","target":"false","walmart":"false"},
+"urls": [
+"https://www.amazon.com/s?k=${res.main}&sprefix=Myjo+single+cup+%2Caps%2C155&ref=nb_sb_ss_fb_1_16_retrain-deeppltr",
+"https://www.ebay.com/sch/i.html?_from=R40&_nkw=${res.main}&_sacat=0&rt=nc&LH_ItemCondition=1",
+"https://www.google.com/search?q=${res.main}&sxsrf=ALiCzsafXIh2coSBx-HlkVOdrWTizf128g%3A1651951728372&source=hp&ei=cMh2YpGLE5WhkPIP1vaE0AQ&iflsig=AJiK0e8AAAAAYnbWgL19nRpBxxTY8rrRdoy6zePGtji-&oq=&gs_lcp=Cgdnd3Mtd2l6EAEYCDIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJzIHCCMQ6gIQJ1AAWABgjDVoAnAAeACAAQCIAQCSAQCYAQCwAQo&sclient=gws-wiz",
+"https://www.etsy.com/search?q=${res.main}",
+"https://www.mercari.com/search/?keyword=${res.main}",
+"https://www.target.com/s?searchTerm=${res.main}",
+"https://www.walmart.com/search?q=${res.main}"
+],
+
+"verbosity":"low"}
