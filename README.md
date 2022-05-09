@@ -6,6 +6,11 @@ Installation can be done by cloning or downloading this repository
 
 `git clone https://github.com/ConnerAllen-Dev/ezSearch.git`
 
+then
+
+`npm install --save -g puppeteer express body-parser figlet inquirer`
+
+
 # Launch (CLI)
 ezSearch has a CLI and GUI available for users to interact with. To use the ezSearch CLI simply `cd` into the folder you cloned or downloaded the repository to then run `node ezSearch`.
 
