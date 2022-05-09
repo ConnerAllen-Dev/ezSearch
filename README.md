@@ -16,7 +16,7 @@ then
 
 
 # Launch (CLI)
-![alt text](https://github.com/ConnerAllen-Dev/ezSearch/blob/lib/githubImgs/screenshot1.png?raw=true)
+![alt text](https://github.com/ConnerAllen-Dev/ezSearch/blob/main/lib/githubImgs/screenshot1.png?raw=true)
 
 ezSearch has a CLI and GUI available for users to interact with. To use the ezSearch CLI simply `cd` into the folder you cloned or downloaded the repository to then run `node ezSearch`.
 
