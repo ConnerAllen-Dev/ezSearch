@@ -24,5 +24,6 @@ Because the GUI is rather self explanitory to navigate, the use section will onl
 **"config"** - Simply displays the config file.
 
 **"edit config"** - Will prompt you with "ezedit_>>" which is the ezSeach editor. See below on how to change config settings. <br>
-    **SET \<desired website> TO \<desired input>**
+    **SET \<desired website> TO \<desired input>**<br>
+    **EXAMPLE: SET google TO true**
 
