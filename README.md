@@ -59,6 +59,7 @@ Because the GUI is rather self explanitory to navigate, the use section will onl
 
 # TODO
 
+- Fix error when user exits webpage before all pages are finished loading (puppeteer navigation error)
 
 # Updates
 
