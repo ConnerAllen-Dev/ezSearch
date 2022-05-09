@@ -40,8 +40,8 @@ Because the GUI is rather self explanitory to navigate, the use section will onl
 **"config"** - Simply displays the config file.
 
 **"edit config"** - Will prompt you with "ezedit_>>" which is the ezSeach editor. See below on how to change config settings. <br>
-![alt text](https://github.com/ConnerAllen-Dev/ezSearch/blob/main/lib/githubImgs/screenshot3.png?raw=true)
-    `**SET \<desired website> TO \<desired input>**`<br>
+![alt text](https://github.com/ConnerAllen-Dev/ezSearch/blob/main/lib/githubImgs/screenshot3.png?raw=true) <br>
+    `SET \<desired website> TO \<desired input>`<br>
     EXAMPLE: `SET google TO true`
     
 **"help"** - Displays the help menu.   
