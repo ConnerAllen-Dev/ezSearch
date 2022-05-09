@@ -4,3 +4,5 @@ A tool for retrieving product information from multiple platforms at once. Searc
 # Installation 
 
 Installation can be done by cloning or downloading this repository
+
+`git clone `
