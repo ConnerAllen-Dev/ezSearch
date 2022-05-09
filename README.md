@@ -1,6 +1,10 @@
 # ezSearch
 A tool for retrieving product information from multiple platforms at once. Search up to 10 platforms with one click
 
+Current Version: 0.0.1
+Author: Conner Allen
+Last Published: 5/8/2022
+
 # Installation 
 Installation can be done by cloning or downloading this repository
 
@@ -36,3 +40,11 @@ Because the GUI is rather self explanitory to navigate, the use section will onl
 
 **"exit"** - Exits program.
 
+
+
+# TODO
+
+
+# Updates
+
+No updates have been published yet
