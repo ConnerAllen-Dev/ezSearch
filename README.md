@@ -13,7 +13,8 @@ Installation can be done by cloning or downloading this repository
 
 `git clone https://github.com/ConnerAllen-Dev/ezSearch.git`
 
-then
+then installing the needed npm repositories (note these are installed globally, if you want to install them to only the project folder
+then nevigate to the repository and remove the `-g` argument in the command below)
 
 `npm install --save -g puppeteer express body-parser figlet inquirer`
 
